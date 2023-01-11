@@ -264,7 +264,8 @@ typedef int pid_t;
 #endif /* HAVE_OPENSSL */
 
 #ifdef HAVE_REGEX_H
-#include <regex.h>
+//#include <regex.h>
+#include <tre.h>
 #endif
 
 #ifndef DISABLE_GZIP

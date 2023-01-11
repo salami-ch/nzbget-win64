@@ -1525,7 +1525,7 @@ RegEx::RegEx(const char *pattern, int matchBufSize) :
 	m_matchBufSize(matchBufSize)
 {
 #ifdef HAVE_REGEX_H
-	m_valid = regcomp(&m_context, pattern, REG_EXTENDED | REG_ICASE | (matchBufSize > 0 ? 0 : REG_NOSUB)) == 0;
+	m_valid = tre_regcomp(&m_context, pattern, REG_EXTENDED | REG_ICASE | (matchBufSize > 0 ? 0 : REG_NOSUB)) == 0;
 	if (matchBufSize > 0)
 	{
 		m_matches = std::make_unique<regmatch_t[]>(matchBufSize);
@@ -1542,14 +1542,14 @@ RegEx::RegEx(const char *pattern, int matchBufSize) :
 RegEx::~RegEx()
 {
 #ifdef HAVE_REGEX_H
-	regfree(&m_context);
+	tre_regfree(&m_context);
 #endif
 }
 
 bool RegEx::Match(const char *str)
 {
 #ifdef HAVE_REGEX_H
-	return m_valid ? regexec(&m_context, str, m_matchBufSize, m_matches.get(), 0) == 0 : false;
+	return m_valid ? tre_regexec(&m_context, str, m_matchBufSize, m_matches.get(), 0) == 0 : false;
 #else
 	return false;
 #endif

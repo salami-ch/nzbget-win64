@@ -22,7 +22,7 @@
     <ProjectGuid>{41BFB691-0127-4391-9629-F1BA6740DDFE}</ProjectGuid>
     <RootNamespace>nzbget</RootNamespace>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -31,7 +31,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v140_xp</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -39,7 +39,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v140_xp</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -75,6 +75,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>..\bin\</OutDir>
     <IntDir>..\bin\Release64\</IntDir>
+    <IncludePath>c:\Program Files\OpenSSL-Win64\include\;c:\Dev\zlib-1.2.13\;c:\Dev\tre-master\include\tre\;$(IncludePath)</IncludePath>
+    <LibraryPath>c:\Program Files\OpenSSL-Win64\lib\VC\static;c:\Dev\zlib-1.2.13\;c:\Dev\tre-master\vcbuild\x64\Release\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -151,12 +153,12 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>.\daemon\connect;.\daemon\extension;.\daemon\feed;.\daemon\frontend;.\daemon\main;.\daemon\nserv;.\daemon\nntp;.\daemon\postprocess;.\daemon\queue;.\daemon\remote;.\daemon\util;.\daemon\windows;.\lib\par2;.\lib\yencode;.\windows\resources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;PACKAGE="nzbget";VERSION="21.2-testing";NDEBUG;_CONSOLE;_WIN32_WINNT=0x0403;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;PACKAGE="nzbget";VERSION="21.2-ng-942f8a7";NDEBUG;_CONSOLE;_WIN32_WINNT=0x0403;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4996;4839;4244;4858;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PrecompiledHeaderFile>nzbget.h</PrecompiledHeaderFile>
       <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -170,8 +172,8 @@
       <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>WS2_32.lib;ole32.lib;OleAut32.Lib;comsuppwd.lib;Advapi32.lib;gdi32.lib;shell32.lib;Winmm.lib;ssleay32MTd.lib;libeay32MTd.lib;regex32MT.lib;zlib32MT.lib</AdditionalDependencies>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>WS2_32.lib;ole32.lib;OleAut32.Lib;comsuppwd.lib;Advapi32.lib;gdi32.lib;shell32.lib;Winmm.lib;zlib.lib;CRYPT32.LIB;libssl64MT.lib;libcrypto64MT.lib;tre.lib</AdditionalDependencies>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -254,7 +256,7 @@
     <ClCompile Include="daemon\util\Util.cpp" />
     <ClCompile Include="daemon\util\FileSystem.cpp" />
     <ClCompile Include="daemon\windows\StdAfx.cpp">
-      <PrecompiledHeader >Create</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="daemon\windows\WinService.cpp" />
     <ClCompile Include="daemon\windows\WinConsole.cpp" />
