@@ -21,6 +21,7 @@
 
 
 #include "nzbget.h"
+#include <intrin.h>
 
 #if (defined(__i686__) || defined(__amd64__)) && !defined(WIN32)
 #include <cpuid.h>
