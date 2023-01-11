@@ -41,7 +41,7 @@
 
 Name "NZBGet"
 OutFile "nzbget-setup.exe"
-Var displayVersion "21.1"
+; Var displayVersion "21.2"
 
 ;Default installation folder
 InstallDir "$PROGRAMFILES64\NZBGet"
@@ -137,18 +137,18 @@ ${EndIf}
 File "NZBGet\*"
 
 ; With Parameter "/32" force installing of 32 bit binaries
-StrCpy $R1 0
-${GetParameters} $R0
-${GetOptions} $R0 "/32" $R0
-IfErrors +2
-StrCpy $R1 32
+; StrCpy $R1 0
+; ${GetParameters} $R0
+; ${GetOptions} $R0 "/32" $R0
+; IfErrors +2
+; StrCpy $R1 32
 
-${If} ${RunningX64}
-${AndIf} $R1 == 0
-  File "NZBGet\64\*"
-${Else}
-  File "NZBGet\32\*"
-${EndIf}
+; ${If} ${RunningX64}
+; ${AndIf} $R1 == 0
+;   File "NZBGet\64\*"
+; ${Else}
+;   File "NZBGet\32\*"
+; ${EndIf}
 
 SetOutPath "$INSTDIR\webui"
 File /r "NZBGet\webui\*"
@@ -180,7 +180,7 @@ WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\NZBGet" "U
 WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\NZBGet" "InstallLocation" "$INSTDIR"
 WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\NZBGet" "Publisher" "nzbget.net"
 WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\NZBGet" "DisplayIcon" "$\"$INSTDIR\nzbget.exe$\",0"
-WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\NZBGet" "DisplayVersion" "$displayVersion"
+WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\NZBGet" "DisplayVersion" "21.2"
 
 ${GetSize} "$INSTDIR" "/S=0K" $0 $1 $2
 IntFmt $0 "0x%08X" $0
