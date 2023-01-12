@@ -75,7 +75,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>..\bin\</OutDir>
     <IntDir>..\bin\Release64\</IntDir>
-    <IncludePath>c:\Program Files\OpenSSL-Win64\include\;c:\Dev\zlib-1.2.13\;c:\Dev\tre-master\include\tre\;$(IncludePath)</IncludePath>
+    <IncludePath>c:\Program Files\OpenSSL-Win64\include\;c:\Dev\zlib-1.2.13\;c:\Dev\tre-master\include\tre\;c:\Dev\tre-master\lib\;$(IncludePath)</IncludePath>
     <LibraryPath>c:\Program Files\OpenSSL-Win64\lib\VC\static;c:\Dev\zlib-1.2.13\;c:\Dev\tre-master\vcbuild\x64\Release\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
