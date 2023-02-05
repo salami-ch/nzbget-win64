@@ -294,7 +294,7 @@ Server1.Notes=
 # NOTE: NZBGet also supports listening on Unix domain sockets instead of TCP/IP
 # sockets. To activate this mode set option <ControlIP> to a local path
 # (e. g. "ControlIP=/var/sock").
-ControlIP=0.0.0.0
+ControlIP=127.0.0.1
 
 # Port which NZBGet server and remote client use (1-65535).
 #
@@ -435,7 +435,7 @@ CertCheck=yes
 #  None    - do not show notifcations;
 #  Stable  - show notifications about new stable releases;
 #  Testing - show notifications about new stable and testing releases.
-UpdateCheck=stable
+UpdateCheck=None
 
 # User name for daemon-mode, POSIX only.
 #
