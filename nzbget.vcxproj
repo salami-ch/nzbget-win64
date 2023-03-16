@@ -153,7 +153,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>.\daemon\connect;.\daemon\extension;.\daemon\feed;.\daemon\frontend;.\daemon\main;.\daemon\nserv;.\daemon\nntp;.\daemon\postprocess;.\daemon\queue;.\daemon\remote;.\daemon\util;.\daemon\windows;.\lib\par2;.\lib\yencode;.\windows\resources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;PACKAGE="nzbget";VERSION="21.2.2.1";NDEBUG;_CONSOLE;_WIN32_WINNT=0x0403;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;PACKAGE="nzbget";VERSION="21.2.3.1";NDEBUG;_CONSOLE;_WIN32_WINNT=0x0403;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>

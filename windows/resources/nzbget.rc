@@ -245,8 +245,8 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 21,2,2,1
- PRODUCTVERSION 21,2,2,1
+ FILEVERSION 21,2,3,1
+ PRODUCTVERSION 21,2,3,1
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -263,12 +263,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "The nzbget-ng Team"
             VALUE "FileDescription", "nzbget-ng"
-            VALUE "FileVersion", "21.2.2.1"
+            VALUE "FileVersion", "21.2.3.1"
             VALUE "InternalName", "nzbget.rc"
             VALUE "LegalCopyright", "Copyright © 2023 The nzbget-ng Team"
             VALUE "OriginalFilename", "nzbget.rc"
             VALUE "ProductName", "nzbget-ng"
-            VALUE "ProductVersion", "21.2.2.1"
+            VALUE "ProductVersion", "21.2.3.1"
         END
     END
     BLOCK "VarFileInfo"
