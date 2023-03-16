@@ -296,7 +296,7 @@ windows_FILES = \
 	nzbget.vcxproj \
 	windows/nzbget-command-shell.bat  \
 	windows/install-update.bat  \
-	windows/README-WINDOWS.txt  \
+	windows/README.md  \
 	windows/package-info.json  \
 	windows/resources/mainicon.ico \
 	windows/resources/nzbget.rc \
@@ -343,7 +343,7 @@ linux_FILES = \
 	linux/installer.sh \
 	linux/install-update.sh \
 	linux/package-info.json \
-	linux/build-info.txt \
+	linux/README.md \
 	linux/build-nzbget \
 	linux/build-unpack \
 	linux/build-toolchain-android \
@@ -456,7 +456,7 @@ nobase_dist_scripts_SCRIPTS = $(scripts_FILES)
 
 # Note about "sed": 
 # We need to make some changes in installed files.
-# On Linux "sed" has option "-i" for in-place-edit. Unfortunateley the BSD version of "sed"
+# On Linux "sed" has option "-i" for in-place-edit. Unfortunately the BSD version of "sed"
 # has incompatible syntax. To solve the problem we perform in-place-edit in three steps:
 # 1) copy the original file to original.temp (delete existing original.temp, if any);
 # 2) sed < original.temp > original
@@ -485,7 +485,6 @@ install-conf:
 uninstall-conf:
 	rm -f "$(DESTDIR)$(sysconfdir)/nzbget.conf"
 
-# Ignore "code_revision.cpp" in distcleancheck
 distcleancheck_listfiles = \
 	find . -type f -exec sh -c 'test -f $(srcdir)/$$1 || echo $$1' \
 	sh '{}' ';'
@@ -499,3 +498,4 @@ dist-hook:
 	find $(distdir)/lib -type f -print -exec chmod -x {} \;
 	find $(distdir)/tests -type f -print -exec chmod -x {} \;
 
+include rebuild.mk
