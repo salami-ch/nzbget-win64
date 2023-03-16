@@ -208,7 +208,9 @@ using namespace MSXML;
 #include <time.h>
 #include <ctype.h>
 #include <inttypes.h>
+#ifndef WIN32
 #include <sys/capability.h>
+#endif
 
 #include <string>
 #include <vector>
